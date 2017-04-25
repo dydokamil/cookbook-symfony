@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RecipeStep
+ *
+ * @ORM\Table(name="recipe_step")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\RecipeStepRepository")
+ */
+class RecipeStep
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prep_time", type="integer")
+     */
+    private $prepTime;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="number", type="integer")
+     */
+    private $number;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instructions", type="string", length=255)
+     */
+    private $instructions;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="cook_time", type="integer")
+     */
+    private $cookTime;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set prepTime
+     *
+     * @param integer $prepTime
+     *
+     * @return RecipeStep
+     */
+    public function setPrepTime($prepTime)
+    {
+        $this->prepTime = $prepTime;
+
+        return $this;
+    }
+
+    /**
+     * Get prepTime
+     *
+     * @return int
+     */
+    public function getPrepTime()
+    {
+        return $this->prepTime;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     *
+     * @return RecipeStep
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set instructions
+     *
+     * @param string $instructions
+     *
+     * @return RecipeStep
+     */
+    public function setInstructions($instructions)
+    {
+        $this->instructions = $instructions;
+
+        return $this;
+    }
+
+    /**
+     * Get instructions
+     *
+     * @return string
+     */
+    public function getInstructions()
+    {
+        return $this->instructions;
+    }
+
+    /**
+     * Set cookTime
+     *
+     * @param integer $cookTime
+     *
+     * @return RecipeStep
+     */
+    public function setCookTime($cookTime)
+    {
+        $this->cookTime = $cookTime;
+
+        return $this;
+    }
+
+    /**
+     * Get cookTime
+     *
+     * @return int
+     */
+    public function getCookTime()
+    {
+        return $this->cookTime;
+    }
+}
+
