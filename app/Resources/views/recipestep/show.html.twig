@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recipestep</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ recipeStep.id }}</td>
+            </tr>
+            <tr>
+                <th>Preptime</th>
+                <td>{{ recipeStep.prepTime }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ recipeStep.number }}</td>
+            </tr>
+            <tr>
+                <th>Instructions</th>
+                <td>{{ recipeStep.instructions }}</td>
+            </tr>
+            <tr>
+                <th>Cooktime</th>
+                <td>{{ recipeStep.cookTime }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recipestep_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -4,10 +4,21 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="sidebar">
+            {% block sidebar %}
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recipe">Przepisy</a></li>
+                    <li><a href="/recipestep">Kroki przepisów</a></li>
+                    <li><a href="/ingredient">Składniki</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

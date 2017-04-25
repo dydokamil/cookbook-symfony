@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recipesteps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Preptime</th>
+                <th>Number</th>
+                <th>Instructions</th>
+                <th>Cooktime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recipeStep in recipeSteps %}
+            <tr>
+                <td><a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">{{ recipeStep.id }}</a></td>
+                <td>{{ recipeStep.prepTime }}</td>
+                <td>{{ recipeStep.number }}</td>
+                <td>{{ recipeStep.instructions }}</td>
+                <td>{{ recipeStep.cookTime }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recipestep_new') }}">Create a new recipeStep</a>
+        </li>
+    </ul>
+{% endblock %}

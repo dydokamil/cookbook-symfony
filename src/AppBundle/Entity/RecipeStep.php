@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * RecipeStep
@@ -15,9 +16,9 @@ class RecipeStep
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
 
@@ -49,6 +50,21 @@ class RecipeStep
      */
     private $cookTime;
 
+    /**
+     * Many RecipeSteps have One Recipe.
+     * @ORM\ManyToOne(targetEntity="Recipe", inversedBy="recipe_steps")
+     */
+    private $recipe;
+
+    /**
+     * Many Steps have Many Ingredients.
+     * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="recipe_steps")
+     */
+    private $ingredients;
+
+    public function __construct() {
+        $this->ingredients = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -155,5 +171,62 @@ class RecipeStep
     {
         return $this->cookTime;
     }
-}
 
+    /**
+     * Set recipe
+     *
+     * @param \AppBundle\Entity\Recipe $recipe
+     *
+     * @return RecipeStep
+     */
+    public function setRecipe(\AppBundle\Entity\Recipe $recipe = null)
+    {
+        $this->recipe = $recipe;
+
+        return $this;
+    }
+
+    /**
+     * Get recipe
+     *
+     * @return \AppBundle\Entity\Recipe
+     */
+    public function getRecipe()
+    {
+        return $this->recipe;
+    }
+
+    /**
+     * Add ingredient
+     *
+     * @param \AppBundle\Entity\Ingredient $ingredient
+     *
+     * @return RecipeStep
+     */
+    public function addIngredient(\AppBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients[] = $ingredient;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredient
+     *
+     * @param \AppBundle\Entity\Ingredient $ingredient
+     */
+    public function removeIngredient(\AppBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients->removeElement($ingredient);
+    }
+
+    /**
+     * Get ingredients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
+}
