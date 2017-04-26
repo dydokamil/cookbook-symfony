@@ -13,7 +13,9 @@ class RecipeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('description');
+        $builder
+            ->add('name', null, ['label' => 'Nazwa'])
+            ->add('description', null, ['label' => 'Opis']);
     }
     
     /**

@@ -13,6 +13,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class RecipeStep
 {
+    function __toString() {
+        return $this->getId();
+    }
     /**
      * @var int
      *

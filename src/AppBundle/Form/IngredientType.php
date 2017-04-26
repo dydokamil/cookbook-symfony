@@ -13,7 +13,9 @@ class IngredientType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('recipe_steps');
+        $builder
+            ->add('name', null, ['label' => 'Nazwa'])
+            ->add('recipe_steps', null, ['label' => 'Krok']);
     }
     
     /**

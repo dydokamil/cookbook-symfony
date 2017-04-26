@@ -21,32 +21,32 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b93928376c295eabdb245bedd4d453982f38652020c863b6efdf86117be88b1f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b93928376c295eabdb245bedd4d453982f38652020c863b6efdf86117be88b1f->enter($__internal_b93928376c295eabdb245bedd4d453982f38652020c863b6efdf86117be88b1f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredient/show.html.twig"));
+        $__internal_dbe7c7253146c26f544a71a4dcbbddd66ad55887b4ca0b03a64ac0e78574095d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_dbe7c7253146c26f544a71a4dcbbddd66ad55887b4ca0b03a64ac0e78574095d->enter($__internal_dbe7c7253146c26f544a71a4dcbbddd66ad55887b4ca0b03a64ac0e78574095d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredient/show.html.twig"));
 
-        $__internal_fcfa12d246cc3097abdb5b1373ffe1d636f9bb0296f7beee5bb012ea612d4975 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fcfa12d246cc3097abdb5b1373ffe1d636f9bb0296f7beee5bb012ea612d4975->enter($__internal_fcfa12d246cc3097abdb5b1373ffe1d636f9bb0296f7beee5bb012ea612d4975_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredient/show.html.twig"));
+        $__internal_53c3eeccb1f6740781fdd94e194e083d6ebc2fe967c6177bcdcccaffc853b11e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_53c3eeccb1f6740781fdd94e194e083d6ebc2fe967c6177bcdcccaffc853b11e->enter($__internal_53c3eeccb1f6740781fdd94e194e083d6ebc2fe967c6177bcdcccaffc853b11e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredient/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b93928376c295eabdb245bedd4d453982f38652020c863b6efdf86117be88b1f->leave($__internal_b93928376c295eabdb245bedd4d453982f38652020c863b6efdf86117be88b1f_prof);
+        $__internal_dbe7c7253146c26f544a71a4dcbbddd66ad55887b4ca0b03a64ac0e78574095d->leave($__internal_dbe7c7253146c26f544a71a4dcbbddd66ad55887b4ca0b03a64ac0e78574095d_prof);
 
         
-        $__internal_fcfa12d246cc3097abdb5b1373ffe1d636f9bb0296f7beee5bb012ea612d4975->leave($__internal_fcfa12d246cc3097abdb5b1373ffe1d636f9bb0296f7beee5bb012ea612d4975_prof);
+        $__internal_53c3eeccb1f6740781fdd94e194e083d6ebc2fe967c6177bcdcccaffc853b11e->leave($__internal_53c3eeccb1f6740781fdd94e194e083d6ebc2fe967c6177bcdcccaffc853b11e_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_6ad02e3b4cf8bc4529865d666c7f2b2f0832d9dd116cc4292d3275e715a0b360 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6ad02e3b4cf8bc4529865d666c7f2b2f0832d9dd116cc4292d3275e715a0b360->enter($__internal_6ad02e3b4cf8bc4529865d666c7f2b2f0832d9dd116cc4292d3275e715a0b360_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_52dacee6326664a96cd7be49c415a6487e5c6689d3b25ee7067346dc21912b90 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_52dacee6326664a96cd7be49c415a6487e5c6689d3b25ee7067346dc21912b90->enter($__internal_52dacee6326664a96cd7be49c415a6487e5c6689d3b25ee7067346dc21912b90_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_b1b22b6e1acaa8126685473375f4d57fb3320c463e8fca0c6c64b58ff5508b96 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b1b22b6e1acaa8126685473375f4d57fb3320c463e8fca0c6c64b58ff5508b96->enter($__internal_b1b22b6e1acaa8126685473375f4d57fb3320c463e8fca0c6c64b58ff5508b96_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8a9b9ca3cf532c45566e95e29ae74676c2d78d845035bcf68905b159df041ee6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8a9b9ca3cf532c45566e95e29ae74676c2d78d845035bcf68905b159df041ee6->enter($__internal_8a9b9ca3cf532c45566e95e29ae74676c2d78d845035bcf68905b159df041ee6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Ingredient</h1>
+        echo "    <h1>Składnik</h1>
 
     <table>
         <tbody>
@@ -58,7 +58,7 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
         echo "</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nazwa</th>
                 <td>";
         // line 14
         echo twig_escape_filter($this->env, $this->getAttribute(($context["ingredient"] ?? $this->getContext($context, "ingredient")), "name", array()), "html", null, true);
@@ -72,20 +72,20 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
             <a href=\"";
         // line 21
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ingredient_index");
-        echo "\">Back to the list</a>
+        echo "\">Powrót do listy</a>
         </li>
         <li>
             <a href=\"";
         // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ingredient_edit", array("id" => $this->getAttribute(($context["ingredient"] ?? $this->getContext($context, "ingredient")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
+        echo "\">Edytuj</a>
         </li>
         <li>
             ";
         // line 27
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
         echo "
-                <input type=\"submit\" value=\"Delete\">
+                <input type=\"submit\" value=\"Usuń\">
             ";
         // line 29
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
@@ -94,10 +94,10 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
     </ul>
 ";
         
-        $__internal_b1b22b6e1acaa8126685473375f4d57fb3320c463e8fca0c6c64b58ff5508b96->leave($__internal_b1b22b6e1acaa8126685473375f4d57fb3320c463e8fca0c6c64b58ff5508b96_prof);
+        $__internal_8a9b9ca3cf532c45566e95e29ae74676c2d78d845035bcf68905b159df041ee6->leave($__internal_8a9b9ca3cf532c45566e95e29ae74676c2d78d845035bcf68905b159df041ee6_prof);
 
         
-        $__internal_6ad02e3b4cf8bc4529865d666c7f2b2f0832d9dd116cc4292d3275e715a0b360->leave($__internal_6ad02e3b4cf8bc4529865d666c7f2b2f0832d9dd116cc4292d3275e715a0b360_prof);
+        $__internal_52dacee6326664a96cd7be49c415a6487e5c6689d3b25ee7067346dc21912b90->leave($__internal_52dacee6326664a96cd7be49c415a6487e5c6689d3b25ee7067346dc21912b90_prof);
 
     }
 
@@ -129,7 +129,7 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ingredient</h1>
+    <h1>Składnik</h1>
 
     <table>
         <tbody>
@@ -138,7 +138,7 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
                 <td>{{ ingredient.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nazwa</th>
                 <td>{{ ingredient.name }}</td>
             </tr>
         </tbody>
@@ -146,18 +146,18 @@ class __TwigTemplate_97693e959e24b8a62a236e8505c65c921ae72bef996b0d2e739b54f96c0
 
     <ul>
         <li>
-            <a href=\"{{ path('ingredient_index') }}\">Back to the list</a>
+            <a href=\"{{ path('ingredient_index') }}\">Powrót do listy</a>
         </li>
         <li>
-            <a href=\"{{ path('ingredient_edit', { 'id': ingredient.id }) }}\">Edit</a>
+            <a href=\"{{ path('ingredient_edit', { 'id': ingredient.id }) }}\">Edytuj</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type=\"submit\" value=\"Delete\">
+                <input type=\"submit\" value=\"Usuń\">
             {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}
-", "ingredient/show.html.twig", "/home/kamil/symfony_projects/cookbook-symfony/app/Resources/views/ingredient/show.html.twig");
+", "ingredient/show.html.twig", "/home/kamil/Dokumenty/studia/cookbook/app/Resources/views/ingredient/show.html.twig");
     }
 }
