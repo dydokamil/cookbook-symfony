@@ -39,12 +39,14 @@ class RecipeStepController extends Controller
      */
     public function newAction(Request $request)
     {
-        $recipe_id = $request->query->get('recipe');
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Recipe');
-        $recipe = $repository->find($recipe_id);
 
         $recipeStep = new Recipestep();
-        $recipeStep->setRecipe($recipe);
+        $recipe_id = $request->query->get('recipe');
+        if ($recipe_id != null) {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Recipe');
+            $recipe = $repository->find($recipe_id);
+            $recipeStep->setRecipe($recipe);
+        }
         $form = $this->createForm('AppBundle\Form\RecipeStepType', $recipeStep);
         $form->handleRequest($request);
 
