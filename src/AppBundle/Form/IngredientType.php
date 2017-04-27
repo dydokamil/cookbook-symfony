@@ -15,7 +15,8 @@ class IngredientType extends AbstractType
     {
         $builder
             ->add('name', null, ['label' => 'Nazwa'])
-            ->add('recipe_steps', null, ['label' => 'Krok']);
+#           ->add('recipe_steps', null, ['label' => 'Krok']
+        ;
     }
     
     /**
