@@ -33,13 +33,19 @@ class Ingredient
     private $name;
 
     /**
-     * Many Ingredients have Many Steps.
-     * @ORM\ManyToMany(targetEntity="RecipeStep", mappedBy="ingredients")
+     * One Ingredient has Many IngredientStepJoins.
+     * @ORM\OneToMany(targetEntity="IngredientStepJoin", mappedBy="ingredient")
      */
-    private $recipe_steps;
+    private $ingredient_step_joins;
+
+    /**
+     * One Ingredient has One IngredientType.
+     * @ORM\OneToOne(targetEntity="IngredientType")
+     */
+    private $type;
 
     public function __construct() {
-        $this->recipe_steps = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ingredient_step_joins = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -108,5 +114,63 @@ class Ingredient
     public function getRecipeSteps()
     {
         return $this->recipe_steps;
+    }
+
+    /**
+     * Add ingredientStepJoin
+     *
+     * @param \AppBundle\Entity\IngredientStepJoin $ingredientStepJoin
+     *
+     * @return Ingredient
+     */
+    public function addIngredientStepJoin(\AppBundle\Entity\IngredientStepJoin $ingredientStepJoin)
+    {
+        $this->ingredient_step_joins[] = $ingredientStepJoin;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredientStepJoin
+     *
+     * @param \AppBundle\Entity\IngredientStepJoin $ingredientStepJoin
+     */
+    public function removeIngredientStepJoin(\AppBundle\Entity\IngredientStepJoin $ingredientStepJoin)
+    {
+        $this->ingredient_step_joins->removeElement($ingredientStepJoin);
+    }
+
+    /**
+     * Get ingredientStepJoins
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredientStepJoins()
+    {
+        return $this->ingredient_step_joins;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \AppBundle\Entity\IngredientType $type
+     *
+     * @return Ingredient
+     */
+    public function setType(\AppBundle\Entity\IngredientType $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \AppBundle\Entity\IngredientType
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

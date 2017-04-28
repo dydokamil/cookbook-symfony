@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ingredientstepjoins list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ingredientStepJoin in ingredientStepJoins %}
+            <tr>
+                <td><a href="{{ path('ingredientstepjoin_show', { 'id': ingredientStepJoin.id }) }}">{{ ingredientStepJoin.id }}</a></td>
+                <td>{{ ingredientStepJoin.amount }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ingredientstepjoin_show', { 'id': ingredientStepJoin.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ingredientstepjoin_edit', { 'id': ingredientStepJoin.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ingredientstepjoin_new') }}">Create a new ingredientStepJoin</a>
+        </li>
+    </ul>
+{% endblock %}

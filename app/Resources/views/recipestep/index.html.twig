@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Lista kroków</h1>
+    <h1>Recipesteps list</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Czas przygotowania</th>
-                <th>Kolejność</th>
-                <th>Opis</th>
-                <th>Czas gotowania</th>
-                <th>Operacje</th>
+                <th>Preptime</th>
+                <th>Number</th>
+                <th>Instructions</th>
+                <th>Cooktime</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +25,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">Pokaż</a>
+                            <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">Edytuj</a>
+                            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -36,11 +36,10 @@
         {% endfor %}
         </tbody>
     </table>
-    {# 
+
     <ul>
         <li>
             <a href="{{ path('recipestep_new') }}">Create a new recipeStep</a>
         </li>
-    </ul> 
-    #}
+    </ul>
 {% endblock %}

@@ -13,13 +13,7 @@ class RecipeStepType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('prepTime', null, ['label' => 'Czas przygotowania'])
-            ->add('number', null, ['label' => 'Kolejność'])
-            ->add('instructions', null, ['label' => 'Opis'])
-            ->add('cookTime', null, ['label' => 'Czas gotowania'])
-            ->add('recipe', null, ['label' => 'Przepis'])
-            ->add('ingredients', null, ['label' => 'Składniki']);
+        $builder->add('prepTime')->add('number')->add('instructions')->add('cookTime')->add('recipe');
     }
     
     /**

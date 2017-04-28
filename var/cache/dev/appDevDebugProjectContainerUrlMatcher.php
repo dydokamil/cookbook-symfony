@@ -174,6 +174,130 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_ingredient_delete:
 
+            if (0 === strpos($pathinfo, '/ingredientstepjoin')) {
+                // ingredientstepjoin_index
+                if (rtrim($pathinfo, '/') === '/ingredientstepjoin') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ingredientstepjoin_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'ingredientstepjoin_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\IngredientStepJoinController::indexAction',  '_route' => 'ingredientstepjoin_index',);
+                }
+                not_ingredientstepjoin_index:
+
+                // ingredientstepjoin_new
+                if ($pathinfo === '/ingredientstepjoin/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ingredientstepjoin_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\IngredientStepJoinController::newAction',  '_route' => 'ingredientstepjoin_new',);
+                }
+                not_ingredientstepjoin_new:
+
+                // ingredientstepjoin_show
+                if (preg_match('#^/ingredientstepjoin/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ingredientstepjoin_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredientstepjoin_show')), array (  '_controller' => 'AppBundle\\Controller\\IngredientStepJoinController::showAction',));
+                }
+                not_ingredientstepjoin_show:
+
+                // ingredientstepjoin_edit
+                if (preg_match('#^/ingredientstepjoin/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ingredientstepjoin_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredientstepjoin_edit')), array (  '_controller' => 'AppBundle\\Controller\\IngredientStepJoinController::editAction',));
+                }
+                not_ingredientstepjoin_edit:
+
+                // ingredientstepjoin_delete
+                if (preg_match('#^/ingredientstepjoin/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_ingredientstepjoin_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredientstepjoin_delete')), array (  '_controller' => 'AppBundle\\Controller\\IngredientStepJoinController::deleteAction',));
+                }
+                not_ingredientstepjoin_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/ingredienttype')) {
+                // ingredienttype_index
+                if (rtrim($pathinfo, '/') === '/ingredienttype') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ingredienttype_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'ingredienttype_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\IngredientTypeController::indexAction',  '_route' => 'ingredienttype_index',);
+                }
+                not_ingredienttype_index:
+
+                // ingredienttype_new
+                if ($pathinfo === '/ingredienttype/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ingredienttype_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\IngredientTypeController::newAction',  '_route' => 'ingredienttype_new',);
+                }
+                not_ingredienttype_new:
+
+                // ingredienttype_show
+                if (preg_match('#^/ingredienttype/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ingredienttype_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredienttype_show')), array (  '_controller' => 'AppBundle\\Controller\\IngredientTypeController::showAction',));
+                }
+                not_ingredienttype_show:
+
+                // ingredienttype_edit
+                if (preg_match('#^/ingredienttype/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_ingredienttype_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredienttype_edit')), array (  '_controller' => 'AppBundle\\Controller\\IngredientTypeController::editAction',));
+                }
+                not_ingredienttype_edit:
+
+                // ingredienttype_delete
+                if (preg_match('#^/ingredienttype/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_ingredienttype_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ingredienttype_delete')), array (  '_controller' => 'AppBundle\\Controller\\IngredientTypeController::deleteAction',));
+                }
+                not_ingredienttype_delete:
+
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/recipe')) {

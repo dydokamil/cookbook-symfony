@@ -60,13 +60,13 @@ class RecipeStep
     private $recipe;
 
     /**
-     * Many Steps have Many Ingredients.
-     * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="recipe_steps")
+     * One RecipeStep has Many IngredientStepJoins.
+     * @ORM\OneToMany(targetEntity="IngredientStepJoin", mappedBy="recipe_step")
      */
-    private $ingredients;
+    private $ingredient_step_joins;
 
     public function __construct() {
-        $this->ingredients = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ingredient_step_joins = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -231,5 +231,39 @@ class RecipeStep
     public function getIngredients()
     {
         return $this->ingredients;
+    }
+
+    /**
+     * Add ingredientStepJoin
+     *
+     * @param \AppBundle\Entity\IngredientStepJoin $ingredientStepJoin
+     *
+     * @return RecipeStep
+     */
+    public function addIngredientStepJoin(\AppBundle\Entity\IngredientStepJoin $ingredientStepJoin)
+    {
+        $this->ingredient_step_joins[] = $ingredientStepJoin;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredientStepJoin
+     *
+     * @param \AppBundle\Entity\IngredientStepJoin $ingredientStepJoin
+     */
+    public function removeIngredientStepJoin(\AppBundle\Entity\IngredientStepJoin $ingredientStepJoin)
+    {
+        $this->ingredient_step_joins->removeElement($ingredientStepJoin);
+    }
+
+    /**
+     * Get ingredientStepJoins
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredientStepJoins()
+    {
+        return $this->ingredient_step_joins;
     }
 }
