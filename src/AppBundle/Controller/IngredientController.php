@@ -44,6 +44,15 @@ class IngredientController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // $file stores the uploaded PNG file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $ingredient->getIcon();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('images_directory'), $fileName);
+            // Update the 'icon' property to store the PNG file name
+            // instead of its contents
+            $ingredient->setIcon($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($ingredient);
             $em->flush();
