@@ -3,12 +3,13 @@
 {% block body %}
     <h1>Lista przepisów</h1>
 
-    <table>
+    <table class='table'>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nazwa</th>
                 <th>Opis</th>
+                <th>Ikona</th>
                 <th>Operacje</th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
                 <td><a href="{{ path('recipe_show', { 'id': recipe.id }) }}">{{ recipe.id }}</a></td>
                 <td>{{ recipe.name }}</td>
                 <td>{{ recipe.description }}</td>
+                <td>{{ recipe.icon }}</td>
                 <td>
                     <ul>
                         <li>

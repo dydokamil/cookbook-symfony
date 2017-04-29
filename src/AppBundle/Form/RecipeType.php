@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class RecipeType extends AbstractType
 {
@@ -15,7 +16,9 @@ class RecipeType extends AbstractType
     {
         $builder
             ->add('name', null, ['label' => 'Nazwa'])
-            ->add('description', null, ['label' => 'Opis']);
+            ->add('description', null, ['label' => 'Opis'])
+            ->add('icon', FileType::class, ['label' => "Icon (PNG file)"])
+        ;
     }
     
     /**

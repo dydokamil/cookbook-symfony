@@ -44,6 +44,23 @@ class RecipeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // $file stores the uploaded PNG file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $recipe->getIcon();
+
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+            // Update the 'icon' property to store the PNG file name
+            // instead of its contents
+            $recipe->setIcon($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($recipe);
             $em->flush();
@@ -131,6 +148,6 @@ class RecipeController extends Controller
             ->setAction($this->generateUrl('recipe_delete', array('id' => $recipe->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }
