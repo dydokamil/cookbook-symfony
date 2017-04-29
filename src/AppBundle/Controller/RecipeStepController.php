@@ -115,7 +115,14 @@ class RecipeStepController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $ingredient_step_joins = $recipeStep->getIngredientStepJoins();
             $em = $this->getDoctrine()->getManager();
+
+            foreach ($ingredient_step_joins as $ingredient_step_join) {
+                $recipeStep->removeIngredientStepJoin($ingredient_step_join);
+                $em->remove($ingredient_step_join);
+            }
+
             $em->remove($recipeStep);
             $em->flush();
         }

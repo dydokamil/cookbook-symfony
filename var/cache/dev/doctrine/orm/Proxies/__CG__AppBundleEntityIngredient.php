@@ -64,10 +64,10 @@ class Ingredient extends \AppBundle\Entity\Ingredient implements \Doctrine\ORM\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'ingredient_step_joins'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'icon', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'ingredient_step_joins'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'ingredient_step_joins'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'icon', '' . "\0" . 'AppBundle\\Entity\\Ingredient' . "\0" . 'ingredient_step_joins'];
     }
 
     /**
@@ -182,6 +182,28 @@ class Ingredient extends \AppBundle\Entity\Ingredient implements \Doctrine\ORM\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIcon()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIcon', []);
+
+        return parent::getIcon();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIcon($icon)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIcon', [$icon]);
+
+        return parent::setIcon($icon);
     }
 
     /**

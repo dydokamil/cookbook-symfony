@@ -64,10 +64,10 @@ class Recipe extends \AppBundle\Entity\Recipe implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'recipe_steps'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'recipe_steps', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'icon'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'recipe_steps'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'recipe_steps', '' . "\0" . 'AppBundle\\Entity\\Recipe' . "\0" . 'icon'];
     }
 
     /**
@@ -182,6 +182,28 @@ class Recipe extends \AppBundle\Entity\Recipe implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIcon()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIcon', []);
+
+        return parent::getIcon();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIcon($icon)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIcon', [$icon]);
+
+        return parent::setIcon($icon);
     }
 
     /**
