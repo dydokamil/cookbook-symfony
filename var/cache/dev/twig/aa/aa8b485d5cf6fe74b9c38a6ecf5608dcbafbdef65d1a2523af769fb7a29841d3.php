@@ -21,29 +21,29 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a951568770c0d6f9a9f98d494b6d5e1d8229fbdcb765cff2f7500a4ec486ac9f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a951568770c0d6f9a9f98d494b6d5e1d8229fbdcb765cff2f7500a4ec486ac9f->enter($__internal_a951568770c0d6f9a9f98d494b6d5e1d8229fbdcb765cff2f7500a4ec486ac9f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
+        $__internal_bd3c693eb7281be2782f225df54bfc78db6ec0ef075d6a47f951d7c56918d739 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bd3c693eb7281be2782f225df54bfc78db6ec0ef075d6a47f951d7c56918d739->enter($__internal_bd3c693eb7281be2782f225df54bfc78db6ec0ef075d6a47f951d7c56918d739_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
 
-        $__internal_5c32ef407cc81bc7e91ff25212f84204bd49c7d06168d8cd01a8640ec28165c9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5c32ef407cc81bc7e91ff25212f84204bd49c7d06168d8cd01a8640ec28165c9->enter($__internal_5c32ef407cc81bc7e91ff25212f84204bd49c7d06168d8cd01a8640ec28165c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
+        $__internal_6f9b720e167dd4f80e7ec7c6e254b8a842b168baf49a7b0a5c90eb04e8e8b4a5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6f9b720e167dd4f80e7ec7c6e254b8a842b168baf49a7b0a5c90eb04e8e8b4a5->enter($__internal_6f9b720e167dd4f80e7ec7c6e254b8a842b168baf49a7b0a5c90eb04e8e8b4a5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a951568770c0d6f9a9f98d494b6d5e1d8229fbdcb765cff2f7500a4ec486ac9f->leave($__internal_a951568770c0d6f9a9f98d494b6d5e1d8229fbdcb765cff2f7500a4ec486ac9f_prof);
+        $__internal_bd3c693eb7281be2782f225df54bfc78db6ec0ef075d6a47f951d7c56918d739->leave($__internal_bd3c693eb7281be2782f225df54bfc78db6ec0ef075d6a47f951d7c56918d739_prof);
 
         
-        $__internal_5c32ef407cc81bc7e91ff25212f84204bd49c7d06168d8cd01a8640ec28165c9->leave($__internal_5c32ef407cc81bc7e91ff25212f84204bd49c7d06168d8cd01a8640ec28165c9_prof);
+        $__internal_6f9b720e167dd4f80e7ec7c6e254b8a842b168baf49a7b0a5c90eb04e8e8b4a5->leave($__internal_6f9b720e167dd4f80e7ec7c6e254b8a842b168baf49a7b0a5c90eb04e8e8b4a5_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_04965f1bf0172c78dfdcc618d97bd0e0fa67555e73b1a038d4d18e7c95a742e4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_04965f1bf0172c78dfdcc618d97bd0e0fa67555e73b1a038d4d18e7c95a742e4->enter($__internal_04965f1bf0172c78dfdcc618d97bd0e0fa67555e73b1a038d4d18e7c95a742e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_55c6ef9fe78393711ab8cf08135f5fdf3469226c81d27bb71c144ee28ff4be96 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_55c6ef9fe78393711ab8cf08135f5fdf3469226c81d27bb71c144ee28ff4be96->enter($__internal_55c6ef9fe78393711ab8cf08135f5fdf3469226c81d27bb71c144ee28ff4be96_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_aee775dea5f579bfc15c8c324ae80e825c5bf7276d1fbb4fd32294c16b4c8785 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_aee775dea5f579bfc15c8c324ae80e825c5bf7276d1fbb4fd32294c16b4c8785->enter($__internal_aee775dea5f579bfc15c8c324ae80e825c5bf7276d1fbb4fd32294c16b4c8785_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_bff3bcb0330579c92eab4304ca5859313394dede3caf32a6a919b03461bbfed7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bff3bcb0330579c92eab4304ca5859313394dede3caf32a6a919b03461bbfed7->enter($__internal_bff3bcb0330579c92eab4304ca5859313394dede3caf32a6a919b03461bbfed7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Ingredientstepjoin creation</h1>
@@ -56,7 +56,7 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
         // line 7
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Create\" />
+        <input type=\"submit\" value=\"Utwórz\" />
     ";
         // line 9
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
@@ -72,10 +72,10 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
     </ul>
 ";
         
-        $__internal_aee775dea5f579bfc15c8c324ae80e825c5bf7276d1fbb4fd32294c16b4c8785->leave($__internal_aee775dea5f579bfc15c8c324ae80e825c5bf7276d1fbb4fd32294c16b4c8785_prof);
+        $__internal_bff3bcb0330579c92eab4304ca5859313394dede3caf32a6a919b03461bbfed7->leave($__internal_bff3bcb0330579c92eab4304ca5859313394dede3caf32a6a919b03461bbfed7_prof);
 
         
-        $__internal_04965f1bf0172c78dfdcc618d97bd0e0fa67555e73b1a038d4d18e7c95a742e4->leave($__internal_04965f1bf0172c78dfdcc618d97bd0e0fa67555e73b1a038d4d18e7c95a742e4_prof);
+        $__internal_55c6ef9fe78393711ab8cf08135f5fdf3469226c81d27bb71c144ee28ff4be96->leave($__internal_55c6ef9fe78393711ab8cf08135f5fdf3469226c81d27bb71c144ee28ff4be96_prof);
 
     }
 
@@ -111,7 +111,7 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type=\"submit\" value=\"Create\" />
+        <input type=\"submit\" value=\"Utwórz\" />
     {{ form_end(form) }}
 
     <ul>

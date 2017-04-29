@@ -36,6 +36,9 @@
             <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">Edit</a>
         </li>
         <li>
+            <a href="{{ path('ingredientstepjoin_new', { 'step': recipeStep.id }) }}">Dodaj składnik</a>
+        </li>
+        <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
