@@ -13,7 +13,7 @@ class IngredientStepJoinType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('amount')->add('recipe_step')->add('ingredient');
+        $builder->add('amount')->add('recipe_step')->add('ingredient')->add('type');
     }
     
     /**

@@ -41,6 +41,12 @@ class IngredientStepJoin
     private $ingredient;
 
     /**
+     * One IngredientStepJoin has One IngredientType.
+     * @ORM\OneToOne(targetEntity="IngredientType")
+     */
+    private $type;
+
+    /**
      * Get id
      *
      * @return int
@@ -120,5 +126,29 @@ class IngredientStepJoin
     public function getIngredient()
     {
         return $this->ingredient;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \AppBundle\Entity\IngredientType $type
+     *
+     * @return IngredientStepJoin
+     */
+    public function setType(\AppBundle\Entity\IngredientType $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \AppBundle\Entity\IngredientType
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

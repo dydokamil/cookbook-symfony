@@ -38,12 +38,6 @@ class Ingredient
      */
     private $ingredient_step_joins;
 
-    /**
-     * One Ingredient has One IngredientType.
-     * @ORM\OneToOne(targetEntity="IngredientType")
-     */
-    private $type;
-
     public function __construct() {
         $this->ingredient_step_joins = new \Doctrine\Common\Collections\ArrayCollection();
     }
