@@ -17,7 +17,7 @@ class RecipeType extends AbstractType
         $builder
             ->add('name', null, ['label' => 'Nazwa'])
             ->add('description', null, ['label' => 'Opis'])
-            ->add('icon', FileType::class, ['label' => "Icon (PNG file)"])
+            ->add('icon', FileType::class, ['label' => "Icon (PNG file)", "data_class" => null])
         ;
     }
     

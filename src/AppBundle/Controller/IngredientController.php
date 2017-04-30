@@ -95,6 +95,12 @@ class IngredientController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $file = $request->get('ingredient')->getIcon();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('images_directory'), $fileName);
+            // Update the 'icon' property to store the PNG file name
+            // instead of its contents
+            $ingredient->setIcon($fileName);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('ingredient_edit', array('id' => $ingredient->getId()));

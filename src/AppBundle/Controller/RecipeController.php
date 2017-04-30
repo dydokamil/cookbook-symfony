@@ -103,6 +103,12 @@ class RecipeController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $file = $request->get('recipe')->getIcon();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('images_directory'), $fileName);
+            // Update the 'icon' property to store the PNG file name
+            // instead of its contents
+            $recipe->setIcon($fileName);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('recipe_edit', array('id' => $recipe->getId()));
