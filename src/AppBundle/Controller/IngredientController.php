@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Ingredient;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Ingredient controller.
@@ -125,9 +127,16 @@ class IngredientController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgs_dir = $this->getParameter('images_directory');
+            $image_path = $imgs_dir . '/' . $ingredient->getIcon();
+            $fs = new Filesystem();
+            if($fs->exists($image_path)) {
+                $fs->remove($image_path);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->remove($ingredient);
             $em->flush();
+            
         }
 
         return $this->redirectToRoute('ingredient_index');

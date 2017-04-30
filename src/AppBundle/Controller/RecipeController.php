@@ -6,6 +6,7 @@ use AppBundle\Entity\Recipe;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Recipe controller.
@@ -133,6 +134,12 @@ class RecipeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgs_dir = $this->getParameter('images_directory');
+            $image_path = $imgs_dir . '/' . $recipe->getIcon();
+            $fs = new Filesystem();
+            if($fs->exists($image_path)) {
+                $fs->remove($image_path);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->remove($recipe);
             $em->flush();
