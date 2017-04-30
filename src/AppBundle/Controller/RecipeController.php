@@ -134,12 +134,23 @@ class RecipeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // usuń kroki
+            $recipe_steps = $recipe->getRecipeSteps();
+            $em = $this->getDoctrine()->getManager();
+            foreach ($recipe_steps as $recipe_step) {
+                $recipe->removeRecipeStep($recipe_step);
+                $em->remove($recipe_step);
+            }
+
+            // usuń zdjęcie
             $imgs_dir = $this->getParameter('images_directory');
             $image_path = $imgs_dir . '/' . $recipe->getIcon();
             $fs = new Filesystem();
             if($fs->exists($image_path)) {
                 $fs->remove($image_path);
             }
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($recipe);
             $em->flush();

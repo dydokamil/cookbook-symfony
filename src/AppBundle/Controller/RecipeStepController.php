@@ -118,6 +118,7 @@ class RecipeStepController extends Controller
             $ingredient_step_joins = $recipeStep->getIngredientStepJoins();
             $em = $this->getDoctrine()->getManager();
 
+            // usuń tabelę pośrednią
             foreach ($ingredient_step_joins as $ingredient_step_join) {
                 $recipeStep->removeIngredientStepJoin($ingredient_step_join);
                 $em->remove($ingredient_step_join);
