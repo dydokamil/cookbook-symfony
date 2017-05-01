@@ -42,7 +42,7 @@ class Recipe
 
     /**
      * One Recipe has Many Steps.
-     * @ORM\OneToMany(targetEntity="RecipeStep", mappedBy="recipe")
+     * @ORM\OneToMany(targetEntity="RecipeStep", mappedBy="recipe", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $recipe_steps;
 

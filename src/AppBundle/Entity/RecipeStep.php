@@ -61,7 +61,10 @@ class RecipeStep
 
     /**
      * One RecipeStep has Many IngredientStepJoins.
-     * @ORM\OneToMany(targetEntity="IngredientStepJoin", mappedBy="recipe_step")
+     * @ORM\OneToMany(targetEntity="IngredientStepJoin", 
+     * mappedBy="recipe_step", 
+     * cascade={"persist", "remove"}, 
+     * orphanRemoval=true)
      */
     private $ingredient_step_joins;
 
