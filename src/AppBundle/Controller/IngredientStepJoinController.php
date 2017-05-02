@@ -53,7 +53,7 @@ class IngredientStepJoinController extends Controller
             $em->persist($ingredientStepJoin);
             $em->flush();
 
-            return $this->redirectToRoute('ingredientstepjoin_show', array('id' => $ingredientStepJoin->getId()));
+            return $this->redirectToRoute('recipestep_show', array('id' => $step->getId()));
         }
 
         return $this->render('ingredientstepjoin/new.html.twig', array(
