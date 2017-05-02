@@ -71,9 +71,12 @@ class RecipeStepController extends Controller
     public function showAction(RecipeStep $recipeStep)
     {
         $deleteForm = $this->createDeleteForm($recipeStep);
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Recipe');
+        $recipe = $repository->findOneById($recipeStep->getRecipe()); 
 
         return $this->render('recipestep/show.html.twig', array(
             'recipeStep' => $recipeStep,
+            'recipe' => $recipe,
             'delete_form' => $deleteForm->createView(),
         ));
     }
