@@ -34,10 +34,8 @@ class Ingredient
     private $name;
 
     /**
-     * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Please, upload the image as a PNG file.")
-     * @Assert\File(mimeTypes={ "image/png" })
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\File(mimeTypes={ "image/svg+xml" })
      */
     private $icon;
 

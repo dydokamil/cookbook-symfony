@@ -85,8 +85,16 @@ class RecipeController extends Controller
     {
         $deleteForm = $this->createDeleteForm($recipe);
 
+        // pokaż kroki skojarzone z przepisem
+        $em = $this->getDoctrine()->getManager();
+        $recipe_steps = $em
+            ->getRepository('AppBundle:RecipeStep')
+            ->findBy(['recipe' => $recipe->getId()])
+        ;
+
         return $this->render('recipe/show.html.twig', array(
             'recipe' => $recipe,
+            'recipeSteps' => $recipe_steps,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -104,6 +112,7 @@ class RecipeController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            # TODO edycja zdjęcia usuwa poprzednie
             $file = $request->get('recipe')->getIcon();
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('images_directory'), $fileName);

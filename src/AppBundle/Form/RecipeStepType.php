@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class RecipeStepType extends AbstractType
 {
@@ -16,7 +17,9 @@ class RecipeStepType extends AbstractType
         $builder
             ->add('prepTime')
             ->add('number')
-            ->add('instructions')
+            ->add('instructions', 
+                TextareaType::class, 
+                ['attr' => ['class' => 'tinymce']])
             ->add('cookTime')
             ->add('recipe', null, ['disabled' => 'disabled']);
     }

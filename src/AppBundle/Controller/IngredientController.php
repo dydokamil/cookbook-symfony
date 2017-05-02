@@ -97,6 +97,7 @@ class IngredientController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            # TODO edycja zdjęcia usuwa poprzednie
             $file = $request->get('ingredient')->getIcon();
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('images_directory'), $fileName);

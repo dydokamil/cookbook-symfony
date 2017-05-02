@@ -39,7 +39,6 @@ class IngredientStepJoinController extends Controller
      */
     public function newAction(Request $request)
     {
-
         $step_id = $request->get('step');
         $repository = $this->getDoctrine()->getRepository('AppBundle:RecipeStep');
         $step = $repository->find($step_id);
