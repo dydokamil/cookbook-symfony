@@ -52,7 +52,7 @@ class Recipe
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\File(mimeTypes={ "image/png" })
+     * @Assert\File(mimeTypes={ "image/png", "image/jpg", "image/jpeg" })
      */
     private $icon;
 

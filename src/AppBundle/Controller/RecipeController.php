@@ -89,7 +89,8 @@ class RecipeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $recipe_steps = $em
             ->getRepository('AppBundle:RecipeStep')
-            ->findBy(['recipe' => $recipe->getId()])
+            ->findBy(['recipe' => $recipe->getId()],
+                     ['number' => 'ASC'])
         ;
 
         return $this->render('recipe/show.html.twig', array(
@@ -112,7 +113,14 @@ class RecipeController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            # TODO edycja zdjęcia usuwa poprzednie
+            // usuwanie poprzedniego zdjęcia
+            $imgs_dir = $this->getParameter('images_directory');
+            $image_path = $imgs_dir . '/' . $recipe->getIcon();
+            $fs = new Filesystem();
+            if($fs->exists($recipe->getIcon())) {
+                $fs->remove($recipe->getIcon());
+            }
+
             $file = $request->get('recipe')->getIcon();
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('images_directory'), $fileName);
@@ -121,7 +129,7 @@ class RecipeController extends Controller
             $recipe->setIcon($fileName);
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('recipe_edit', array('id' => $recipe->getId()));
+            # return $this->redirectToRoute('recipe_edit', array('id' => $recipe->getId()));
         }
 
         return $this->render('recipe/edit.html.twig', array(
