@@ -38,45 +38,62 @@
         <li>
             {{ form_start(delete_form) }}
             {# TODO usuwanie wszystkich kroków #}
-                <input type="submit" value="Usuń">
+            <input type="submit" value="Usuń">
             {{ form_end(delete_form) }}
         </li>
     </ul>
 
     <h1>Lista kroków</h1>
+    <div class="col-md-9">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Preptime</th>
+                    <th>Number</th>
+                    <th>Instructions</th>
+                    <th>Cooktime</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recipeStep in recipeSteps %}
+                    <tr>
+                        <td><a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">{{ recipeStep.id }}</a></td>
+                        <td>{{ recipeStep.prepTime }}</td>
+                        <td>{{ recipeStep.number }}</td>
+                        <td>{{ recipeStep.instructions }}</td>
+                        <td>{{ recipeStep.cookTime }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">edit</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Preptime</th>
-                <th>Number</th>
-                <th>Instructions</th>
-                <th>Cooktime</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for recipeStep in recipeSteps %}
-            <tr>
-                <td><a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">{{ recipeStep.id }}</a></td>
-                <td>{{ recipeStep.prepTime }}</td>
-                <td>{{ recipeStep.number }}</td>
-                <td>{{ recipeStep.instructions }}</td>
-                <td>{{ recipeStep.cookTime }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="col-md-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Produkty</th>
+                </tr>
+                <tbody>
+                    {% for join in joins %}
+                        <tr>
+                            <td>{{ join.amount }} {{ join.type }} {{ join.ingredient }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    </div>
 
 {% endblock %}

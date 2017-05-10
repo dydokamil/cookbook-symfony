@@ -93,9 +93,23 @@ class RecipeController extends Controller
                      ['number' => 'ASC'])
         ;
 
+        $joins_all = [];
+        $recipe_steps = $recipe->getRecipeSteps();
+        # zwraca tablice      vvv
+        foreach($recipe_steps as $recipe_step) {
+            $joins = $recipe_step->getIngredientStepJoins();
+            foreach($joins as $join) {
+                array_push($joins_all, $join);
+            #   dump($join->getIngredient()->getName());
+            #  dump($join->getAmount());
+            # dump($join->getType()->getType());
+            }
+        }
+
         return $this->render('recipe/show.html.twig', array(
             'recipe' => $recipe,
             'recipeSteps' => $recipe_steps,
+            'joins' => $joins_all,
             'delete_form' => $deleteForm->createView(),
         ));
     }
