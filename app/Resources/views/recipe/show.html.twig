@@ -1,14 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Przepis</h1>
-
-    <table>
+    <div class='row'>
+    <div class='col-md-3'>
+        <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}"><img width=100% src="{{ asset('uploads/img/') }}{{recipe.icon}}" class="gallery-thumb"></a>
+    </div>
+    <div class='col-md-9'>
+        <h1>{{ recipe.name }}</h1>
+        <h3>{{ recipe.description }}</h3>
+    </div>
+    </div>
+    {# <table>
         <tbody>
-            <tr>
+             <tr>
                 <th>Id</th>
-                <td>{{ recipe.id }}</td>
-            </tr>
+                <td>{{ recipe.id }}</td> 
+            </tr> 
             <tr>
                 <th>Nazwa</th>
                 <td>{{ recipe.name }}</td>
@@ -21,27 +28,9 @@
                 <th>Icon</th>
                 <td>{{ recipe.icon }}</td>
                 <img height=32 width=32 src="{{ asset('uploads/img/') }}{{recipe.icon}}" class="gallery-thumb">
-            </tr>
+            </tr> 
         </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('recipe_index') }}">Powrót do listy</a>
-        </li>
-        <li>
-            <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Edytuj</a>
-        </li>
-        <li>
-            <a href="{{ path('recipestep_new', { 'recipe': recipe.id }) }}">Dodaj krok</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            {# TODO usuwanie wszystkich kroków #}
-            <input type="submit" value="Usuń">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    </table> #}
 
     <h1>Lista kroków</h1>
     <div class="col-md-9">
@@ -81,7 +70,7 @@
     </div>
 
     <div class="col-md-3">
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Produkty</th>

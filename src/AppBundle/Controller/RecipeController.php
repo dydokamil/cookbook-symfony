@@ -90,19 +90,15 @@ class RecipeController extends Controller
         $recipe_steps = $em
             ->getRepository('AppBundle:RecipeStep')
             ->findBy(['recipe' => $recipe->getId()],
-                     ['number' => 'ASC'])
+                     ['number' => 'asc'])
         ;
 
         $joins_all = [];
         $recipe_steps = $recipe->getRecipeSteps();
-        # zwraca tablice      vvv
         foreach($recipe_steps as $recipe_step) {
             $joins = $recipe_step->getIngredientStepJoins();
             foreach($joins as $join) {
                 array_push($joins_all, $join);
-            #   dump($join->getIngredient()->getName());
-            #  dump($join->getAmount());
-            # dump($join->getType()->getType());
             }
         }
 
