@@ -37,23 +37,29 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th>Id</th>
+                    {# <th>Id</th> #}
                     <th>Preptime</th>
                     <th>Number</th>
                     <th>Instructions</th>
                     <th>Cooktime</th>
-                    <th>Actions</th>
+                    {# <th>Actions</th> #}
                 </tr>
             </thead>
             <tbody>
                 {% for recipeStep in recipeSteps %}
-                    <tr>
-                        <td><a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">{{ recipeStep.id }}</a></td>
+                    <tr onmouseover="this.bgColor='#eee'" 
+                        onmouseout="this.bgColor='#fff'" 
+                        style="cursor: pointer;" 
+                        class='clickable-row' 
+                        data-href="{{ path('recipestep_show', {'id': recipeStep.id }) }}"
+                    >
+
+                        {# <td><a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">{{ recipeStep.id }}</a></td> #}
                         <td>{{ recipeStep.prepTime }}</td>
                         <td>{{ recipeStep.number }}</td>
                         <td>{{ recipeStep.instructions }}</td>
                         <td>{{ recipeStep.cookTime }}</td>
-                        <td>
+                        {# <td>
                             <ul>
                                 <li>
                                     <a href="{{ path('recipestep_show', { 'id': recipeStep.id }) }}">show</a>
@@ -62,7 +68,7 @@
                                     <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">edit</a>
                                 </li>
                             </ul>
-                        </td>
+                        </td> #}
                     </tr>
                 {% endfor %}
             </tbody>
@@ -84,5 +90,17 @@
                 </tbody>
         </table>
     </div>
-
+    {% block javascripts %}
+        <script>
+        window.onload = function() {
+            rows = document.getElementsByClassName('clickable-row');
+            for(var i = 0, len = rows.length; i < len; i++) {
+                rows[i].onclick = function() { window.location = this.dataset.href };
+            }
+        };
+        function szary(row) {
+            row.bgColor = "#ccc";
+        }
+        </script>
+    {% endblock %}
 {% endblock %}
