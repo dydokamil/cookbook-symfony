@@ -90,14 +90,15 @@ class RecipeController extends Controller
         $recipe_steps = $em
             ->getRepository('AppBundle:RecipeStep')
             ->findBy(['recipe' => $recipe->getId()],
-                     ['number' => 'asc'])
-        ;
+                     ['number' => 'ASC']
+                 );
 
         $joins_all = [];
         $recipe_steps = $recipe->getRecipeSteps();
         foreach($recipe_steps as $recipe_step) {
             $joins = $recipe_step->getIngredientStepJoins();
             foreach($joins as $join) {
+                dump($recipe_step->getNumber());
                 array_push($joins_all, $join);
             }
         }
