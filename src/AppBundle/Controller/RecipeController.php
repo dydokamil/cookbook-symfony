@@ -98,7 +98,7 @@ class RecipeController extends Controller
         foreach($recipe_steps as $recipe_step) {
             $joins = $recipe_step->getIngredientStepJoins();
             foreach($joins as $join) {
-                dump($recipe_step->getNumber());
+                # dump($recipe_step->getNumber());
                 array_push($joins_all, $join);
             }
         }

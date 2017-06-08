@@ -21,12 +21,12 @@
                 <td>{{ recipe.description }}</td>
                 <td>{{ recipe.icon }}</td>
                 <td>
-                    <ul>
+                    <ul class='list-unstyled'>
                         <li>
-                            <a href="{{ path('recipe_show', { 'id': recipe.id }) }}">Pokaż</a>
+                            <a class='btn btn-info' href="{{ path('recipe_show', { 'id': recipe.id }) }}">Pokaż</a>
                         </li>
                         <li>
-                            <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Edytuj</a>
+                            <a class='btn btn-warning' href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Edytuj</a>
                         </li>
                     </ul>
                 </td>
@@ -35,9 +35,9 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class='list-unstyled'>
         <li>
-            <a href="{{ path('recipe_new') }}">Dodaj nowy przepis</a>
+            <a href="{{ path('recipe_new') }}" class='btn btn-info'>Dodaj nowy przepis</a>
         </li>
     </ul>
 {% endblock %}
