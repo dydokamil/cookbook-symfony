@@ -5,12 +5,12 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input class='btn btn-success' type="submit" value="Utwórz" />
     {{ form_end(form) }}
 
-    <ul>
+    <ul class='list-unstyled'>
         <li>
-            <a href="{{ path('recipestep_index') }}">Back to the list</a>
+            <a href="{{ path('recipestep_index') }}">Powrót do listy</a>
         </li>
     </ul>
 {% endblock %}

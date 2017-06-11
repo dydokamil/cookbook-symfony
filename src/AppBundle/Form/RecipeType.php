@@ -15,12 +15,12 @@ class RecipeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, ['label' => 'Nazwa'])
-            ->add('description', null, ['label' => 'Opis'])
+            ->add('name', null, ['label' => 'Nazwa', 'attr' => ['class' => 'form-control'] ])
+            ->add('description', null, ['label' => 'Opis', 'attr' => ['class' => 'form-control']])
             ->add('icon', FileType::class, ['label' => "Icon (PNG file)", "data_class" => null])
-        ;
+            ;
     }
-    
+
     /**
      * {@inheritdoc}
      */

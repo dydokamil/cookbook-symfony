@@ -28,13 +28,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('recipestep_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('recipestep_edit', { 'id': recipeStep.id }) }}">Edit</a>
-        </li>
+    <ul class='list-unstyled'>
         <li>
             <a href="{{ path('ingredientstepjoin_new', { 'step': recipeStep.id }) }}">Dodaj składnik</a>
         </li>
@@ -42,8 +36,11 @@
             <a href="{{ path('recipe_show', { 'id': recipe.id }) }}">Powrót do przepisu</a>
         </li>
         <li>
+            <a class='btn btn-warning' href="{{ path('recipestep_edit', { 'id': recipeStep.id  }) }}">Edytuj</a>
+        </li>
+        <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class='btn btn-danger' type="submit" value="Usuń">
             {{ form_end(delete_form) }}
         </li>
     </ul>

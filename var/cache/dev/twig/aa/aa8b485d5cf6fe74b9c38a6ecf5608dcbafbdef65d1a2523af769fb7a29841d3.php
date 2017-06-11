@@ -21,32 +21,32 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_60b77740880c88615eb2cd7f2ed0059b62dd513b1965c5fbadb0709409c79d5b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_60b77740880c88615eb2cd7f2ed0059b62dd513b1965c5fbadb0709409c79d5b->enter($__internal_60b77740880c88615eb2cd7f2ed0059b62dd513b1965c5fbadb0709409c79d5b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
+        $__internal_05e7ef1106243e40167e112ba3873c967a1348564d96bb75a9b5ba9f054b3f74 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_05e7ef1106243e40167e112ba3873c967a1348564d96bb75a9b5ba9f054b3f74->enter($__internal_05e7ef1106243e40167e112ba3873c967a1348564d96bb75a9b5ba9f054b3f74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
 
-        $__internal_334153996bc3e29d2b70ff275e17d41aa614c10c6e96bad48de9e479043ff684 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_334153996bc3e29d2b70ff275e17d41aa614c10c6e96bad48de9e479043ff684->enter($__internal_334153996bc3e29d2b70ff275e17d41aa614c10c6e96bad48de9e479043ff684_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
+        $__internal_f11aeb6afc6b55272613814076f7f12a06c562f391b4b32a2d67da0c192af58d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f11aeb6afc6b55272613814076f7f12a06c562f391b4b32a2d67da0c192af58d->enter($__internal_f11aeb6afc6b55272613814076f7f12a06c562f391b4b32a2d67da0c192af58d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ingredientstepjoin/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_60b77740880c88615eb2cd7f2ed0059b62dd513b1965c5fbadb0709409c79d5b->leave($__internal_60b77740880c88615eb2cd7f2ed0059b62dd513b1965c5fbadb0709409c79d5b_prof);
+        $__internal_05e7ef1106243e40167e112ba3873c967a1348564d96bb75a9b5ba9f054b3f74->leave($__internal_05e7ef1106243e40167e112ba3873c967a1348564d96bb75a9b5ba9f054b3f74_prof);
 
         
-        $__internal_334153996bc3e29d2b70ff275e17d41aa614c10c6e96bad48de9e479043ff684->leave($__internal_334153996bc3e29d2b70ff275e17d41aa614c10c6e96bad48de9e479043ff684_prof);
+        $__internal_f11aeb6afc6b55272613814076f7f12a06c562f391b4b32a2d67da0c192af58d->leave($__internal_f11aeb6afc6b55272613814076f7f12a06c562f391b4b32a2d67da0c192af58d_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f8ca98387a1efc1c798e6143b8a3490d274151be1c2cc57f30ff2a3569feaa18 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f8ca98387a1efc1c798e6143b8a3490d274151be1c2cc57f30ff2a3569feaa18->enter($__internal_f8ca98387a1efc1c798e6143b8a3490d274151be1c2cc57f30ff2a3569feaa18_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7da24a6936fe3cf48ffdfd7aa165bb9b6f52d7aeb14d3b4b7fdedf577ef8d6de = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7da24a6936fe3cf48ffdfd7aa165bb9b6f52d7aeb14d3b4b7fdedf577ef8d6de->enter($__internal_7da24a6936fe3cf48ffdfd7aa165bb9b6f52d7aeb14d3b4b7fdedf577ef8d6de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_03f71e29bf420402b476cfd86142df84d4b24586c9c66a9d2e010cda4099ed60 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_03f71e29bf420402b476cfd86142df84d4b24586c9c66a9d2e010cda4099ed60->enter($__internal_03f71e29bf420402b476cfd86142df84d4b24586c9c66a9d2e010cda4099ed60_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_ac58ae46ce7d2fd9455eebd907c0783a61f67f0b8fe444f7892f00d03d36419e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ac58ae46ce7d2fd9455eebd907c0783a61f67f0b8fe444f7892f00d03d36419e->enter($__internal_ac58ae46ce7d2fd9455eebd907c0783a61f67f0b8fe444f7892f00d03d36419e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Ingredientstepjoin creation</h1>
+        echo "    <h1>Tworzenie składnika dla kroku</h1>
 
     ";
         // line 6
@@ -62,20 +62,20 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
-    <ul>
+    <ul class='list-unstyled'>
         <li>
             <a href=\"";
         // line 13
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ingredientstepjoin_index");
-        echo "\">Back to the list</a>
+        echo "\">Powrót do listy</a>
         </li>
     </ul>
 ";
         
-        $__internal_03f71e29bf420402b476cfd86142df84d4b24586c9c66a9d2e010cda4099ed60->leave($__internal_03f71e29bf420402b476cfd86142df84d4b24586c9c66a9d2e010cda4099ed60_prof);
+        $__internal_ac58ae46ce7d2fd9455eebd907c0783a61f67f0b8fe444f7892f00d03d36419e->leave($__internal_ac58ae46ce7d2fd9455eebd907c0783a61f67f0b8fe444f7892f00d03d36419e_prof);
 
         
-        $__internal_f8ca98387a1efc1c798e6143b8a3490d274151be1c2cc57f30ff2a3569feaa18->leave($__internal_f8ca98387a1efc1c798e6143b8a3490d274151be1c2cc57f30ff2a3569feaa18_prof);
+        $__internal_7da24a6936fe3cf48ffdfd7aa165bb9b6f52d7aeb14d3b4b7fdedf577ef8d6de->leave($__internal_7da24a6936fe3cf48ffdfd7aa165bb9b6f52d7aeb14d3b4b7fdedf577ef8d6de_prof);
 
     }
 
@@ -107,19 +107,19 @@ class __TwigTemplate_91521bd548010bb93d92b275761ea576d268ae33b3213b2c7a98259d7ad
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ingredientstepjoin creation</h1>
+    <h1>Tworzenie składnika dla kroku</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type=\"submit\" value=\"Utwórz\" />
     {{ form_end(form) }}
 
-    <ul>
+    <ul class='list-unstyled'>
         <li>
-            <a href=\"{{ path('ingredientstepjoin_index') }}\">Back to the list</a>
+            <a href=\"{{ path('ingredientstepjoin_index') }}\">Powrót do listy</a>
         </li>
     </ul>
 {% endblock %}
-", "ingredientstepjoin/new.html.twig", "/home/kamil/symfony_projects/cookbook-symfony/app/Resources/views/ingredientstepjoin/new.html.twig");
+", "ingredientstepjoin/new.html.twig", "/home/kamil/Dokumenty/studia/cookbook-symfony/app/Resources/views/ingredientstepjoin/new.html.twig");
     }
 }

@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ingredientstepjoin creation</h1>
+    <h1>Tworzenie składnika dla kroku</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Utwórz" />
     {{ form_end(form) }}
 
-    <ul>
+    <ul class='list-unstyled'>
         <li>
-            <a href="{{ path('ingredientstepjoin_index') }}">Back to the list</a>
+            <a href="{{ path('ingredientstepjoin_index') }}">Powrót do listy</a>
         </li>
     </ul>
 {% endblock %}
